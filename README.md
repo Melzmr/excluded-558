@@ -2,10 +2,12 @@
 
 - ### run `npm install`
 
-- ### run `npm run watch`
+- ### run `npm run watch:first` in first terminal
 
-- ### edit something in `index.ts`
+- ### run `npm run watch` in seconnd terminal
 
-- ### notice how change in `/dist/*.js` file after rebuild in watch mode triggered another incremental check
+- ### edit something in `firstEntry.ts`
+
+- ### notice how change in `firstEntry.ts` file also triggered check in second terminal window (`secondEntry.ts`)
 
 More information in [Excluded files trigger plugin a new incremental check. #558](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin/issues/558)

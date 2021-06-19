@@ -1,7 +1,7 @@
 const path =  require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-module.exports = () => {
+module.exports = (env: {target: string}) => {
   const tsConfigPath = path.resolve(__dirname, 'tsconfig.json');
   const chunkName = '[name]-[contenthash]';
 
@@ -9,7 +9,7 @@ module.exports = () => {
     context: __dirname,
     mode: 'development',
     target: 'web',
-    entry: './src/index.ts',
+    entry: env.target === 'first' ? './src/firstEntry.ts' : './src/secondEntry.ts',
     output: {
       filename: `js/${chunkName}.js`,
       chunkFilename: `js/chunks/${chunkName}.js`,
